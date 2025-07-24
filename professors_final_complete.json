@@ -1,0 +1,1160 @@
+{
+  "메타데이터": {
+    "버전": "final_v1.0",
+    "목적": "대학원 연구실 추천 시스템용",
+    "총_교수_수": 31,
+    "총_논문_수": 96,
+    "완전한_논문_수": 92,
+    "논문_완성도": "95.8%",
+    "추출_일시": "2025-07-24 09:51",
+    "특징": [
+      "연구주제와 기술방법 완벽 분리",
+      "여러 줄 논문 정보 완전 추출",
+      "벡터 임베딩 최적화 구조",
+      "GPT-4o-mini 친화적 설계"
+    ]
+  },
+  "사용법": {
+    "추천_프롬프트": "다음 교수진 데이터를 참고하여 학생의 관심분야에 맞는 연구실을 추천해주세요.",
+    "벡터_임베딩": {
+      "모델": "text-embedding-3-small",
+      "차원": 1536,
+      "토큰_제한": "8,192 (교수당 ~788토큰)"
+    }
+  },
+  "교수진": [
+    {
+      "기본정보": {
+        "교수이름": "강건욱",
+        "영문이름": "selected",
+        "학위": "M.D., Ph.D.",
+        "직급": "교수",
+        "대학명": "서울대학교",
+        "학과명": "의과대학",
+        "이메일": "Kangkw@snu.ac.kr",
+        "전화번호": "02-2072-2803"
+      },
+      "연구실": {
+        "연구실명": "분자영상 및 치료 연구실",
+        "연구실웹사이트": "",
+        "위치": ""
+      },
+      "연구분야": {
+        "키워드": "나노입자를 이용한 표적영상 및 치료, 방사성 핵종을 이용한 치료, 방사성의약품개발",
+        "설명": "이 실험실에서는 암을 비롯한 각종 질환에서 근본적인 원인이 되는 유전자 이상을 조기에 진단하기 위해 다중 영상을 통한 생체수준에서 영상화하는 분자유전자 영상법을 개발하고 있으며 특히 나노입"
+      },
+      "연구주제": [
+        "알부민 나노입자를 이용한 생체영상치료법개발",
+        "졸레드론산의 대식세포 분극화조절을 통한 면역관문 치료제 효과 증진",
+        "종양미세환경 표적 분자영상 진단/치료법 개발",
+        "전립선암에서 알파, 베타선을 이용한 방사선 치료",
+        "mRNA 백신/개인 맞춤형 치료제 유효성, 독성평가"
+      ],
+      "기술및방법": [
+        "나노입자 제반기술 (표지, 분리, 표면처리)",
+        "분자생물학적 기법 (Gene Cloning, PCR, Northern blot, Western blot)",
+        "소동물 PET/CT, SPECT/CT, 광학영상",
+        "방사성의약품 합성 및 표지 기술"
+      ],
+      "학력경력": [
+        "1991 의학사, 서울대학교 의과대학(의학)",
+        "2007~현재: 교수, 서울대학교 의과대학",
+        "2001 의학박사, 서울대학교 대학원 의학과(핵의학)",
+        "2003~2004 미국 스탠포드의대 Bio-X 분자영상프로그램 연구원"
+      ],
+      "논문": [
+        "1. Kim K et al. Radiation-induced exosomal miR-21 enhances tumor proliferation and invasiveness in breast cancer: implications for poor prognosis in radiotherapy patients. Exp Hematol Oncol. 2024 Dec 18;13(1):120",
+        "2. Tian M et al. International consensus on clinical use of presynaptic dopaminergic positron emission tomography imaging in parkinsonism. Eur J Nucl Med Mol Imaging. 2024 Jan;51(2):434-442.",
+        "3. Suh HY, et al.FDG uptake reflects an immune-enriched subtype of thyroid cancer: Clinical im- plications of imaging-based molecular characterization. Cancer Med. 2023 Aug;12(16):17068-17077.",
+        "4. Oh HR, et al. Activated Natural Killer Cell Inoculation Alleviates Fibrotic Liver Pathology in a Carbon Tetrachloride-Induced Liver Cirrhosis Mouse Model. Biomedicines. 2023 Apr 4;11(4):1090",
+        "5. Jang HJ et al. Imaging of Indocyanine Green-Human Serum Albumin (ICG-HSA) Complex in Secreted Protein Acidic and Rich in Cysteine (SPARC)-Expressing Glioblastoma. Int J Mol Sci. 2023 Jan 3;24(1):850.",
+        "6. Lee SY et al. Cerenkov luminescence imaging of interscapular brown adipose tissue using a TSPO-targeting PET probe in the UCP1 ThermoMouse. Theranostics. 2022 Aug 29;12(14):6380-6394."
+      ],
+      "학생지도": {
+        "특징": "",
+        "진로": ""
+      }
+    },
+    {
+      "기본정보": {
+        "교수이름": "강홍기",
+        "영문이름": "",
+        "학위": "Ph.D.",
+        "직급": "",
+        "대학명": "서울대학교",
+        "학과명": "의과대학",
+        "이메일": "hongki.kang@snu.ac.kr",
+        "전화번호": "02-740-8581"
+      },
+      "연구실": {
+        "연구실명": "(Biomedical Electronics Lab)",
+        "연구실웹사이트": "https://bmeel.snu.ac.kr",
+        "위치": ""
+      },
+      "연구분야": {
+        "키워드": "",
+        "설명": "Biomedical Electronics Lab (BMEEL)은 뇌 및 근전도 등의 생체 신호를 기반으로 한 신경 인터 페이스 연구 및 질병 치료를 위한 다양한 테크놀로지를 개발하고 적용하는 연구를 주로 수행"
+      },
+      "연구주제": [],
+      "기술및방법": [],
+      "학력경력": [],
+      "논문": [
+        "1. Duhee Kim†, Murali Bissannagari†, Boil Kim†, Nari Hong, Jaeu Park, Hyeongtae Lim, Junhee Lee, Jungha Lee, Yoon Kyoung Kim, Youngjae Cho, Kwang Lee, Junghyup Lee, Jong-Hyeok Yoon, Jae Eun Jang, David Tsai, Sanghoon Lee, Hyuk-Jun Kwon, Han Kyoung Choe*, and Hongki Kang*, “Hexagonal Metal Complex Based Mechanically Robust Transparent Ultrathin Gold µECoG for Electro-Optical Neural Interfaces,” npj FLEXIBLE ELECTRONICS, 2025.",
+        "2. Duhee Kim†, Jee Woong Lee†, Seoyoung Kang†, Woongki Hong, Jungha Lee, Hyuk-Jun Kwon, Jae Eun Jang, Luke P. Lee, and Hongki Kang*, “Simultaneous Detection of Neural Activity and Temperature in Photothermal Neural Stimulation,” ADVANCED SCIENCE, 2411725, 2025..",
+        "3. Nari Hong, Boil Kim, Jaewon Lee, Han Kyung Choe, Kyong Hwan Jin*, and Hongki Kang*,\"Machine learn- ing-based high-frequency neuronal spike reconstruction from low-frequency and low-sampling-rate record-"
+      ],
+      "학생지도": {
+        "특징": "",
+        "진로": ""
+      }
+    },
+    {
+      "기본정보": {
+        "교수이름": "구자록",
+        "영문이름": "Weinh",
+        "학위": "",
+        "직급": "교수",
+        "대학명": "서울대학교",
+        "학과명": "의과대학",
+        "이메일": "kujalok@snu.ac.kr",
+        "전화번호": "02-3668-7919"
+      },
+      "연구실": {
+        "연구실명": "암연구소 세포생물학연구실(암연구소 7층), 한국세포주은행 (http://cellbank.snu.ac.kr)",
+        "연구실웹사이트": "http://cellbank.snu.ac.kr",
+        "위치": ""
+      },
+      "연구분야": {
+        "키워드": "종양오가노이드/세포주수립과 유전체분석, 항암제내성기전, 항암제효능평가, 바이오뱅킹",
+        "설명": "최근에 주목 받고 있는 인체 오가노이드와 전통적으로 암연구에 이용되고 있는 세포주는 암연구를 비롯한 생명과학연구에 있어 필수적인 연구소재이다 본연구실에서는 인체 오가노이드 및 세포주를 직접 수립하고"
+      },
+      "연구주제": [],
+      "기술및방법": [
+        "western blot"
+      ],
+      "학력경력": [
+        "1992,1994 학사, 석사 서울대학교 수의과대학",
+        "1994-2001 서울대학교 암연구센터, 연구원, 선임연구원",
+        "1998 박사, 서울대학교 대학원 (수의병리학, 종양세포생물학, 암유전체학)",
+        "2013-2014 미국 NIH/NHGRI/GMBB 방문연구원",
+        "2001-현재 교수, 서울대학교 의과대학 의학과/대학원 의과학과"
+      ],
+      "논문": [
+        "1. Proteogenomic landscape of human pancreatic ductal adenocarcinoma in an Asian population reveals tumor cell-enriched and immune-rich subtypes. Nat Cancer. 2023 Feb;4(2):290-307",
+        "2. Multifocal organoids reveal clonal associations between synchronous intestinal tumors with pervasive heterogeneous drug responses. NPJ Genom Med. 2022 Jul 19;7(1):42",
+        "3. Establishment of Patient-Derived Pancreatic Cancer Organoids from Endoscopic Ultrasound-Guided 3. Fine-Needle Aspiration Biopsies. Gut Liver. 2022 Jul 15;16(4):625-63",
+        "4. Colon cancer organoids using monoclonal organoids established in four different lesions of one cancer patient reveal tumor heterogeneity and different real-time responsiveness to anti-cancer drugs. Biomed Pharmacother. 2022 Jun 9;152:113260",
+        "5. Culture and multiomic analysis of lung cancer patient-derived pleural effusions revealed distinct druggable molecular types. Sci Rep. 2022 Apr 15;12(1):6345.",
+        "6. Multifocal Organoid Capturing of Colon Cancer Reveals Pervasive Intratumoral Heterogenous Drug Responses. Adv Sci (Weinh). 2022 Feb;9(5):e2103360."
+      ],
+      "학생지도": {
+        "특징": "",
+        "진로": ""
+      }
+    },
+    {
+      "기본정보": {
+        "교수이름": "김동현",
+        "영문이름": "Ann Arbor",
+        "학위": "Ph.D.",
+        "직급": "",
+        "대학명": "서울대학교",
+        "학과명": "의과대학",
+        "이메일": "biologokim@snu.ac.kr",
+        "전화번호": ""
+      },
+      "연구실": {
+        "연구실명": "",
+        "연구실웹사이트": "http://microbiota.snu.ac.kr",
+        "위치": ""
+      },
+      "연구분야": {
+        "키워드": "",
+        "설명": ""
+      },
+      "연구주제": [],
+      "기술및방법": [],
+      "학력경력": [
+        "2009-2011 PostDoc., /",
+        "2011-2016 PostDoc., University of Michigan Medical School (Ann Arbor)"
+      ],
+      "논문": [],
+      "학생지도": {
+        "특징": "",
+        "진로": ""
+      }
+    },
+    {
+      "기본정보": {
+        "교수이름": "김명환",
+        "영문이름": "",
+        "학위": "Ph.D.",
+        "직급": "",
+        "대학명": "서울대학교",
+        "학과명": "의과대학",
+        "이메일": "kmhwany@snu.ac.kr",
+        "전화번호": "02-740-8377"
+      },
+      "연구실": {
+        "연구실명": "",
+        "연구실웹사이트": "",
+        "위치": ""
+      },
+      "연구분야": {
+        "키워드": "",
+        "설명": ", (abnormal behavior) . (gene silencing, virus-mediated gene expression)"
+      },
+      "연구주제": [],
+      "기술및방법": [
+        "western blot"
+      ],
+      "학력경력": [
+        "2005-2006 PostDoc, ( )",
+        "2006-2009 PostDoc, KAIST"
+      ],
+      "논문": [],
+      "학생지도": {
+        "특징": "",
+        "진로": ""
+      }
+    },
+    {
+      "기본정보": {
+        "교수이름": "김성준",
+        "영문이름": "",
+        "학위": "M.D., Ph.D.",
+        "직급": "",
+        "대학명": "서울대학교",
+        "학과명": "의과대학",
+        "이메일": "sjoonkim@snu.ac.kr",
+        "전화번호": "02-740-8230"
+      },
+      "연구실": {
+        "연구실명": "",
+        "연구실웹사이트": "https://cvic.snu.ac.kr",
+        "위치": ""
+      },
+      "연구분야": {
+        "키워드": "",
+        "설명": "본 연구실은 폐동맥고혈압, 우심부전, 부정맥, 그리고 피부노화 및 면역질환 관련 연구를 다양 한 이온통로 및 수축-이완 연결과정 등과 연결지어 연구하고 있다."
+      },
+      "연구주제": [],
+      "기술및방법": [],
+      "학력경력": [
+        "1998-2000 PostDoc, University of Freiburg ( )"
+      ],
+      "논문": [
+        "1. Kang H,.. Kim SJ (co-corresp), Lee MS. ER-to-lysosome Ca2+ refilling followed by K+ efflux-coupled store-operated Ca2+ entry in inflammasome activation and metabolic inflammation. Elife. 2024;12:RP87561",
+        "2. Song M,.., Kim SJ, Woo DH. Modeling acute myocardial infarction and cardiac fibrosis using human induced pluri- potent stem cell-derived multi-cellular heart organoids. Cell Death Dis. 2024;15(5):308.",
+        "3. Park NK, … Kim SJ (co-corresp), Choi SW. Translation reinitiation in c.453delC frameshift mutation of KCNH2 pro- ducing functional hERG K+ channels with mild dominant negative effect in the heterozygote patient-derived iPSC cardiomyocytes. Hum Mol Genet. 2023:ddad165.",
+        "4. Ock S,… Kim SJ, Lee WS, Kim J. Insulin signaling is critical for sinoatrial node maintenance and function. Exp Mol Med. 2023:965-973.",
+        "5. Kim SE, … Kim SJ (co-corresp), Nam JH. Multi-target modulation of ion channels underlying the analgesic effects of α-mangostin in dorsal root ganglion neurons. Phytomedicine. 2023;115:154791.",
+        "6. Sunwoo SH, … Kim SJ, …, Lee SP. Ventricular tachyarrhythmia treatment and prevention by subthreshold stim- ulation with stretchable epicardial multichannel electrode array. Sci Adv. 2023;9(13):eadf6856"
+      ],
+      "학생지도": {
+        "특징": "",
+        "진로": ""
+      }
+    },
+    {
+      "기본정보": {
+        "교수이름": "김종일",
+        "영문이름": "",
+        "학위": "M.D., Ph.D.",
+        "직급": "",
+        "대학명": "서울대학교",
+        "학과명": "의과대학",
+        "이메일": "jongil@snu.ac.kr",
+        "전화번호": "02-740-8251"
+      },
+      "연구실": {
+        "연구실명": "",
+        "연구실웹사이트": "http://genome.snu.ac.kr",
+        "위치": ""
+      },
+      "연구분야": {
+        "키워드": "",
+        "설명": "본 연구실은 아시아인의 유전체에 존재하는 다양한 변이의 기능 및 질병과의 관련성을 규명하 고자 노력하고 있다. 이를 위해서 정상 아시아인의 유전체 서열 분석을 통하여 서열변이 및 구"
+      },
+      "연구주제": [],
+      "기술및방법": [],
+      "학력경력": [
+        "1999-2001 PostDoc, Rockefeller University & Beth-Israel Daeconess Hospital"
+      ],
+      "논문": [
+        "1. Lee W et al, A single-cell atlas of in vitro multiculture systems uncovers the in vivo lineage trajectory and cell state in the human lung. Exp Mol Med 55(8):1831, 2023 (IF=12.8) *correspondence",
+        "2. Choi J et al, A whole-genome reference panel of 14,393 individuals for East Asian populations accelerates discov- ery of rare functional variants. Sci Adv 9(32):eadg6319, 2023 (IF=13.6) *correspondence",
+        "3. Lee YA et al, NTRK- and RET-fusion-directed therapy in pediatric thyroid cancer yields a tumor response and ra- dioiodine uptake. J Clin Invest 131(18):e144847, 2021 (IF=15.9) *correspondence",
+        "4. Na D et al, Predictive biomarkers for 5-fluorouracil and oxaliplatin-based chemotherapy in gastric cancers via profiling of patient-derived xenografts. Nat Commun 12(1):4840, 2021 (IF=16.6) *correspondence",
+        "5. Woo XY et al, Conservation of copy number profiles during engraftment and passaging of patient-derived cancer xenografts. Nat Genet 53(1):86, 2021 (IF=30.8)",
+        "6. GenomeAsia100K Consortium, The GenomeAsia 100K Project enables genetic discoveries across Asia. Nature 576 (7785):106, 2019 (IF=64.8)"
+      ],
+      "학생지도": {
+        "특징": "",
+        "진로": ""
+      }
+    },
+    {
+      "기본정보": {
+        "교수이름": "김현제",
+        "영문이름": "",
+        "학위": "M.D., Ph.D.",
+        "직급": "",
+        "대학명": "서울대학교",
+        "학과명": "의과대학",
+        "이메일": "tte9801@snu.ac.kr",
+        "전화번호": "02-740-8307"
+      },
+      "연구실": {
+        "연구실명": "",
+        "연구실웹사이트": "http://snulit.com",
+        "위치": ""
+      },
+      "연구분야": {
+        "키워드": "",
+        "설명": "본 연구실은 모든 종류의 10x 플랫폼(scRNAseq, snRNAseq, scATAC, mutiome)을 구축하여 직접 데이터 생산및 분석을 진행하고 있으며 Targeted single cell proteomics (CyTOF) 는 Mount Sinai HIMC에서 데이"
+      },
+      "연구주제": [],
+      "기술및방법": [],
+      "학력경력": [
+        "2017-2019 PostDoc, Icahn School of Medicine at Mount Sinai"
+      ],
+      "논문": [
+        "1. Nam et al. Simultaneous Epigenetic and Gene Expression Profiling at Single Cell Resolution Uncovers Stem-Like Treg Subsets Induced With Oligonucleotide Expansion in Humans. Immune Netw. 2024 Oct;24:e39. (IF=5.6)",
+        "2. Jin et al, Proteomic analysis of cardiovascular disease-associated proteins in Korean patients with moder- ate-to-severe atopic dermatitis. World Allergy Organ J. 2024 Aug 8;17(8):100949. (IF=7.3) *correspondence",
+        "3. Bang et al, Unveiling the dynamics of B lymphocytes in systemic lupus erythematosus patients treated with beli- mumab through longitudinal single-cell RNA sequencing. Rheumatology (Oxford). 2024 Jul 22:keae364. (IF=4.7) *correspondence",
+        "4. Jin et al, Mapping the immune cell landscape of severe atopic dermatitis by single-cell RNA-seq. Allergy. 2024 Jun;79(6):1584-1597. (IF=12.6) *correspondence",
+        "5. Kim et al, A phase II open-label randomized clinical trial of preoperative durvalumab or durvalumab plus trem- elimumab in resectable head and neck squamous cell carcinoma. Clin Cancer Res. 2024 May 15. (IF=10.0) *correspondence",
+        "6. Lee et al, High-dimensional profiling of regulatory T cells in psoriasis reveals an impaired skin-trafficking property. EBioMedicine. 2024 Feb 1;100:104985. (IF=9.7) *correspondence"
+      ],
+      "학생지도": {
+        "특징": "",
+        "진로": ""
+      }
+    },
+    {
+      "기본정보": {
+        "교수이름": "김현진",
+        "영문이름": "",
+        "학위": "Ph.D.",
+        "직급": "",
+        "대학명": "서울대학교",
+        "학과명": "의과대학",
+        "이메일": "hyeonjinkim@snu.ac.kr",
+        "전화번호": "02-740-8543"
+      },
+      "연구실": {
+        "연구실명": "(Magnetic resonance informatics Laboratory)",
+        "연구실웹사이트": "",
+        "위치": ""
+      },
+      "연구분야": {
+        "키워드": "",
+        "설명": "자기공명영상(Magnetic Resonance Imaging (MRI))은 다양한 contrast의 영상을 통해 사람이나 실험동물의 체내에서 비침습적으로 anatomical/functional 정보를 획득하는 기법이다. 자기공명분광(Magnetic Resonance"
+      },
+      "연구주제": [],
+      "기술및방법": [],
+      "학력경력": [],
+      "논문": [
+        "1. Yun et al. Geographical discrimination of Asian red pepper powers using 1H NMR spectroscopy and deep learning-based convolutional neural networks. Food Chem 2024;439:138082 (IF = 8.50) *correspondence",
+        "2. Jeong et al. Recurrent neural network-aided processing of incomplete free induction decays in 1H-MRS of the brain. J Magn Reson 2024;368:107762 (IF = 2.00) *correspondence",
+        "3. Lee et al. Bayesian deep learning-based 1H-MRS of the brain: Metabolite quantification with uncertainty estimation using Monte Carlo dropout. Magn Reson Med 2022;88:38-52 (IF = 3.30) *correspondence",
+        "4. Hwang et al. Prediction of brain age from routine T2-weighted spin-echo brain magnetic resonance images with a deep convolutional neural network. Neurobiol Aging 2021;105:78-85 (IF = 5.13) *correspondence",
+        "5. Jang et al. Unsupervised anomaly detection using generative adversarial networks in 1H-MRS of the brain. J Magn Reson 2021;325:106936 (IF = 2.73) *correspondence",
+        "6. Lee et al. Deep learning-based target metabolite isolation and big data-driven measurement uncertainty estimation in proton magnetic resonance spectroscopy of the brain. Magn Reson Med 2020;84:1689-1706 (IF = 4.67) *correspondence"
+      ],
+      "학생지도": {
+        "특징": "",
+        "진로": ""
+      }
+    },
+    {
+      "기본정보": {
+        "교수이름": "박상민",
+        "영문이름": "",
+        "학위": "M.D.",
+        "직급": "",
+        "대학명": "서울대학교",
+        "학과명": "의과대학",
+        "이메일": "smpark.snuh@gmail.com",
+        "전화번호": "02-2072-3331"
+      },
+      "연구실": {
+        "연구실명": "Health System Data Science Laboratory ( )",
+        "연구실웹사이트": "",
+        "위치": ""
+      },
+      "연구분야": {
+        "키워드": "Data science, Simulation epidemiology, Pharmacoepidemiology, Medical big data",
+        "설명": "헬스 시스템 데이터 사이언스 연구실에서는 최근 주목을 받는 대규모 건강정보 자료에 데이터 과 학 기술을 접목하여 다양한 연구를 수행합니다. 의료-환경-생활 융합 DB를 활용하는 건강시스템"
+      },
+      "연구주제": [],
+      "기술및방법": [],
+      "학력경력": [],
+      "논문": [],
+      "학생지도": {
+        "특징": "",
+        "진로": ""
+      }
+    },
+    {
+      "기본정보": {
+        "교수이름": "박성준",
+        "영문이름": "",
+        "학위": "Ph.D.",
+        "직급": "",
+        "대학명": "서울대학교",
+        "학과명": "의과대학",
+        "이메일": "seongjunpark@snu.ac.kr",
+        "전화번호": ""
+      },
+      "연구실": {
+        "연구실명": "",
+        "연구실웹사이트": "",
+        "위치": ""
+      },
+      "연구분야": {
+        "키워드": "",
+        "설명": "- 저희 연구실은 바이오메디컬 및 뇌공학 분야에 종사하고 있고, 그 중에서도 주로 차세대 하드웨어 및 시스템을 개발하는 연구를 수행하고 있습니다. 특히 생물과 무생물을 보다 자연스럽고, 또 정확하게"
+      },
+      "연구주제": [
+        "저희 연구실은 바이오메디컬 및 뇌공학 분야에 종사하고 있고, 그 중에서도 주로 차세대 하드웨어 및\n시스템을 개발하는 연구를 수행하고 있습니다. 특히 생물과 무생물을 보다 자연스럽고, 또 정확하게\n이어주는 인터페이스 기술에 관심이 많으며, 세부적으로 아래와 같은 네가지 카테고리의 연구를 수행합니다.\n1. 차세대 뇌",
+        "디지털 헬스케어란 IT기술의 활용을 통해 개인맞춤형 건강 관리, 질병 예방, 나아가서는 치료까지\n가능해지는 변화를 뜻합니다. 이를 위한 다양한 바이오메디컬 기술의 발전 중에서도, 몸 안밖에서 나오는\n다양한 신호 (심전도, 혈당, 산소포화도, 뇌파 등)를 측정하여 사람의 건강 상태를 파악하고, 나아가 건강한\n삶을 유지할 수 있게 도와주는 웨어러블 기기는 갈수록 그 중요성이 커지고 있습니다. 우리 연구실은\n다기능 파이버, 전도성 연성재료 및 신호처리 및 AI 기술을 이용하여, 몸에 부착하거나 입는 형태의 다양한\n헬스케어 디바이스를 개발합니다. 센서, 엑츄에이터, 디스플레이, 전자시스템 등이 탑재된 스마트 의류 및\n피부 부착형 (타투형) 기기는, 헬스케어 분야뿐만 아니라 통신, 메타버스, 패션, 엔터테인먼트 등 여러"
+      ],
+      "기술및방법": [],
+      "학력경력": [
+        "– 2018-2019: MIT 재료공학과 박사후연구원",
+        "– 2019-2024: KAIST 바이오및뇌공학과, 신소재공학과 조교수"
+      ],
+      "논문": [],
+      "학생지도": {
+        "특징": "",
+        "진로": ""
+      }
+    },
+    {
+      "기본정보": {
+        "교수이름": "박수경",
+        "영문이름": "",
+        "학위": "M.D.",
+        "직급": "교수",
+        "대학명": "서울대학교",
+        "학과명": "의과대학",
+        "이메일": "",
+        "전화번호": ""
+      },
+      "연구실": {
+        "연구실명": "",
+        "연구실웹사이트": "",
+        "위치": ""
+      },
+      "연구분야": {
+        "키워드": "",
+        "설명": ", (AI) (XAI) . , Asia Cohort Consortium (ACC), Consortium of"
+      },
+      "연구주제": [
+        ".\n, (AI) (XAI)\n. , Asia Cohort Consortium (ACC), Consortium of\nInvestigators of Modifiers of BRCA1/2 (CIMBA), Breast Cancer Association Consortium, Ovarian\nCancer Association Consortium, Asia Breast Cancer Consortium (ABCC), International Thyroid Cancer\nStudy .\n최근 연구업적\n1. Association between family history with lung cancer incidence and mortality risk in the Asia Cohort\nConsortium. Int J Cancer. 2025 Feb 15;156(4):723"
+      ],
+      "기술및방법": [],
+      "학력경력": [],
+      "논문": [
+        "1. Association between family history with lung cancer incidence and mortality risk in the Asia Cohort Consortium. Int J Cancer. 2025 Feb 15;156(4):723-733.",
+        "2. Reproductive factors and risk of epithelial ovarian cancer: results from the Asia Cohort Consortium. Br J Cancer. 2025 Mar;132(4):361-370.",
+        "3. Ethnic-specific associations between body mass index and gastric cancer: a Mendelian randomization study in European and Korean populations. Gastric Cancer. 2024 Jan;27(1):19-27.",
+        "4. Group I pharmaceuticals of IARC and associated cancer risks: systematic review and meta-analysis."
+      ],
+      "학생지도": {
+        "특징": "",
+        "진로": ""
+      }
+    },
+    {
+      "기본정보": {
+        "교수이름": "박정규",
+        "영문이름": "ITTI",
+        "학위": "",
+        "직급": "",
+        "대학명": "서울대학교",
+        "학과명": "의과대학",
+        "이메일": "chpark@snu.ac.kr",
+        "전화번호": "740-8311"
+      },
+      "연구실": {
+        "연구실명": "Laboratory of Immune tolerance and Transplantation immunology (ITTI)",
+        "연구실웹사이트": "https://biomed.snu.ac.kr/itti",
+        "위치": ""
+      },
+      "연구분야": {
+        "키워드": "",
+        "설명": ""
+      },
+      "연구주제": [
+        "2012 연구부학장, 서울대학교 의과대학\n2012",
+        "2019 2단계 바이오이종장기개발사업단 단장\n2022",
+        "현재 서울대학교 의과대학 장기이식연구소장\nTel : 740"
+      ],
+      "기술및방법": [
+        "Western blot"
+      ],
+      "학력경력": [
+        "1987 의학사, 서울대학교 의과대학 (의학)",
+        "1995 의학박사, 서울대학교 대학원 의학과 (미생물학)",
+        "1998 조교수, 서울대학교 의과대학 미생물학교실",
+        "2004 부교수, 서울대학교 의과대학 미생물학교실",
+        "2009 - 현재 교수, 서울대학교 의과대학 미생물학교실 / 대학원 의과학과",
+        "2012 - 2016 주임교수, 서울대학교 의과대학 미생물학교실"
+      ],
+      "논문": [],
+      "학생지도": {
+        "특징": "",
+        "진로": ""
+      }
+    },
+    {
+      "기본정보": {
+        "교수이름": "방예지",
+        "영문이름": "Ye-Ji Bang",
+        "학위": "",
+        "직급": "",
+        "대학명": "서울대학교",
+        "학과명": "의과대학",
+        "이메일": "yeji.bang@snu.ac.kr",
+        "전화번호": "02-740-8306"
+      },
+      "연구실": {
+        "연구실명": "Laboratory of Microbiology and Nutritional Immunology",
+        "연구실웹사이트": "",
+        "위치": ""
+      },
+      "연구분야": {
+        "키워드": "(www.banglab.org , 329 )",
+        "설명": "인간의 장내에는 약 100조개에 이르는 세균, 곰팡이, 원생동물 등 다양한 미생물이 군집을 이루고 있습니다. 이 미생물군집 (microbiota)은 증식에 필요한 환경과 식이로부터 공급되는 풍부한 영양"
+      },
+      "연구주제": [],
+      "기술및방법": [
+        "Western Blot"
+      ],
+      "학력경력": [
+        "2014-2015 PostDoc, ( )",
+        "2015-2020 PostDoc, University of Texas Southwestern Medical Center ( )"
+      ],
+      "논문": [
+        "1. Hu, Z.*, Bang, Y-J.*, Ruhn, K.A., and Hooper, L.V. 2019. Molecular basis of retinol binding by serum amyloid A during infection. Proc. Natl. Acad. Sci. USA. 116(38):19077-19082. (* equal contribution)",
+        "2. Gattu, S., Bang, Y-J., Pendse, M., Dende, C., Chara, A. L., Harris, T. A., Wang, Y., Ruhn, K.A., Kuang, Z., Sockanathan, S., and Hooper, L. V. 2019. Epithelial retinoic acid receptor β regulates serum amyloid A expression and vitamin A-dependent intestinal immunity. Proc. Natl. Acad. Sci. USA. 116(22):10911-10916.",
+        "3. Shin, H., and Bang, Y-J., 2025. Aromatic Amino Acid Metabolites: Molecular Messengers Bridging Immune-Microbiota Communication. Immune Netw., 25(1):e10.",
+        "4. Ra, Y.E., and Bang, Y-J., 2024. Balancing act of the intestinal antimicrobial proteins on gut microbiota and health. J. Microbiol. 62:167-179.",
+        "5. Bang, Y-J., 2023. Vitamin A: A key coordinator of host-microbe interactions in the intestine. BMB Reports, 56(3):133-139. 7.Nguyen, T.T., Kim, Y-K., Ko, D., Kim, J., Yi, H., and Bang, Y-J., 2025. Development of the First Shuttle Vector System and Optimization of Transformation in Selenomonas sputigena. J. Microbiol. Biotechnol. In press"
+      ],
+      "학생지도": {
+        "특징": "",
+        "진로": ""
+      }
+    },
+    {
+      "기본정보": {
+        "교수이름": "서인석",
+        "영문이름": "",
+        "학위": "M.D., Ph.D.",
+        "직급": "교수",
+        "대학명": "서울대학교",
+        "학과명": "의과대학",
+        "이메일": "",
+        "전화번호": ""
+      },
+      "연구실": {
+        "연구실명": "",
+        "연구실웹사이트": "",
+        "위치": ""
+      },
+      "연구분야": {
+        "키워드": "",
+        "설명": "우리 실험실은 흥분세포 및 비흥분세포에서 칼슘의 이동에 중요한 역할을 하는 transient receptor potential(TRP) channel에 대한 연구를 하고 있다. TRP channel은 초파리의 눈에서"
+      },
+      "연구주제": [],
+      "기술및방법": [],
+      "학력경력": [],
+      "논문": [
+        "1. TRPC1 as a negative regulator for TRPC4 and TRPC5 channels. Pflugers Arch. 2019 Aug;471(8):1045-1053.",
+        "2. Differential PI(4,5)P2 sensitivities of TRPC4, C5 homomeric and TRPC1/4, C1/5 heteromeric channels. Sci Rep. 2019 Feb 12;9(1):1849",
+        "3. Molecular architecture of the G i-bound TRPC5 ion channel. Nat Commun. 2023 May 3;14(1):2550",
+        "4. Cryo-EM structure of the heteromeric TRPC1/C4 channel. Nat Struct Mol Biol. 2025 Feb;32(2):326-338.",
+        "5. Dual action of the G q-PLC -PI(4,5)P2 pathway on TRPC1/4 and TRPC1/5 heterotetramers. Sci Rep. 2018 Aug 14;8(1):12117",
+        "6. Increased TRPC5 glutathionylation contributes to striatal neuron loss in Huntington's disease. Brain. 2015 Oct;138(Pt 10):3030-47"
+      ],
+      "학생지도": {
+        "특징": "",
+        "진로": ""
+      }
+    },
+    {
+      "기본정보": {
+        "교수이름": "성지혜",
+        "영문이름": "Neuroscience",
+        "학위": "Ph.D.",
+        "직급": "",
+        "대학명": "서울대학교",
+        "학과명": "의과대학",
+        "이메일": "jihye.seong@snu.ac.kr",
+        "전화번호": "02-740-8298"
+      },
+      "연구실": {
+        "연구실명": "세포기능센싱 및 제어연구실(연구관 612/623호, https://seonglab.snu.ac.kr/)",
+        "연구실웹사이트": "https://seonglab.snu.ac.kr/",
+        "위치": ""
+      },
+      "연구분야": {
+        "키워드": "",
+        "설명": "본 연구실은 질병과 관련된 다이나믹한 단백질 기능 및 상호작용을 연구하기 위한 형광 및 발광 분 자센서를 개발하고 있습니다. 살아있는 세포내 실시간 세포이미징을 통해 다양한 세포내 기능 이상"
+      },
+      "연구주제": [],
+      "기술및방법": [],
+      "학력경력": [
+        "1999-2005 학사/석사, 서울대학교 약학대학 (약학)",
+        "2006-2012 박사, University of Illinois at Urbana-Champaign (Neuroscience)",
+        "2013-2013 PostDoc, Stanford University College of Medicine",
+        "2014-2023 선임/책임연구원, 한국과학기술연구원 (KIST)",
+        "2023-현재 교수, 서울대학교 의과대학 약리학교실"
+      ],
+      "논문": [],
+      "학생지도": {
+        "특징": "",
+        "진로": ""
+      }
+    },
+    {
+      "기본정보": {
+        "교수이름": "신현무",
+        "영문이름": "",
+        "학위": "Ph.D.",
+        "직급": "",
+        "대학명": "서울대학교",
+        "학과명": "의과대학",
+        "이메일": "hyunmu.shin@snu.ac.kr",
+        "전화번호": "010-2555-5872"
+      },
+      "연구실": {
+        "연구실명": "",
+        "연구실웹사이트": "",
+        "위치": ""
+      },
+      "연구분야": {
+        "키워드": "",
+        "설명": "A. 유전체 연구를 이용한 만성감염과 항암면역의 기전연구 B. 본 시스템면역학 연구실에서는 감염 면역의 전반적인 과정을 이해하기 위하여, 면역 세포와 주변 세포"
+      },
+      "연구주제": [],
+      "기술및방법": [],
+      "학력경력": [],
+      "논문": [
+        "1. Kim IS, Kang CK, Lee SJ, Lee CH, Kim M, Seo C, Kim G, Lee S, Park KS, Chang E, Jung J, Song KH, Choe PG, Park WB, Kim ES, Bin Kim H, Kim NJ, Oh MD, Lee JE, Shin HM, Kim HR. Tracking antigen-specific TCR clonotypes in SARS-CoV-2 infection reveals distinct severity trajectories. J Med Virol. 2023 Nov;95(11):e29199. doi: 10.1002/jmv.29199. PMID: 37916645.",
+        "2. Lee CM, Choe PG, Kang CK, Lee E, Song KH, Bang JH, Kim ES, Kim HB, Kim NJ, Kim HR, Kim Y, Lee CH, Shin HM, Park SW, Park WB, Oh MD. Low humoral and cellular immune responses early after breakthrough infection may contribute to severe COVID-19. Front Immunol. 2023 Mar 22;14:1106664. doi:10.3389/fimmu.2023.1106664. PMID: 37033936; PMCID: PMC10073433.",
+        "3. Kang CK, Kim MG, Park SW, Kim YW, Lee CM, Choe PG, Park WB, Kim NJ, Kim M, Lee S, Kim IS, Lee CH, Shin HM, Kim HR, Oh MD. Comparable humoral and cellular immunity against Omicron variant BA.4/5 of once-boosted BA.1/2 convalescents and twice-boosted COVID-19-naïve individuals. J Med Virol. 2023 Feb;95(2):e28558. doi: 10.1002/jmv.28558. PMID: 36755360.",
+        "4. Lee CM, Kim M, Kang CK, Choe PG, Kim NJ, Bang H, Cho T, Shin HM, Kim HR, Park WB, Oh MD. Different degree of cytokinemia and T-cell activation according to serum IL-6 levels in critical COVID-19. Front Immunol. 2023 Apr 4;14:1110874. doi: 10.3389/fimmu.2023.1110874. PMID: 37081872; PMCID: PMC10110916.",
+        "5. Kang CK, Shin HM, Choe PG, Park J, Hong J, Seo JS, Lee YH, Chang E, Kim NJ, Kim M, Kim YW, Kim HR, Lee CH, Seo JY, Park WB, Oh MD. Broad humoral and cellular immunity elicited by one-dose mRNA vaccination 18 months after SARS- CoV-2 infection. BMC Med. 2022 May 4;20(1):181.",
+        "6. Shin HM, Kim G, Kim S, Sim JH, Choi J, Kim M, Kwon M, Ye SK, Lee DS, Cho SW, Kim ST, Lee J, Kim HR. Chromatin accessibility of circulating CD8+ T cells predicts treatment response to PD-1 blockade in patients with gastric cancer. Nat Commun. 2021 Feb 12;12(1):975."
+      ],
+      "학생지도": {
+        "특징": "",
+        "진로": ""
+      }
+    },
+    {
+      "기본정보": {
+        "교수이름": "여선주",
+        "영문이름": "",
+        "학위": "Ph.D.",
+        "직급": "교수",
+        "대학명": "서울대학교",
+        "학과명": "의과대학",
+        "이메일": "",
+        "전화번호": ""
+      },
+      "연구실": {
+        "연구실명": "실험실명 : 열대 감염병 제어실(연구관 424호 실험실)(Lab of tropical infectious",
+        "연구실웹사이트": "",
+        "위치": "424호 실"
+      },
+      "연구분야": {
+        "키워드": "",
+        "설명": "말라리아는 대부분의 열대 지역에서 발생하며, 세계 매년 2억 이상의 인구가 감염되고 있고, 40만 명 이상의 사망자를 유발하고 있다. 국내에서도 삼일열 말라리아 원충이 매년 500명 이상 환자"
+      },
+      "연구주제": [],
+      "기술및방법": [],
+      "학력경력": [],
+      "논문": [],
+      "학생지도": {
+        "특징": "",
+        "진로": ""
+      }
+    },
+    {
+      "기본정보": {
+        "교수이름": "이민재",
+        "영문이름": "",
+        "학위": "PhD",
+        "직급": "",
+        "대학명": "서울대학교",
+        "학과명": "의과대학",
+        "이메일": "",
+        "전화번호": ""
+      },
+      "연구실": {
+        "연구실명": "",
+        "연구실웹사이트": "https://sites.google.com/view/protein-dynamics-laboratory/",
+        "위치": ""
+      },
+      "연구분야": {
+        "키워드": "",
+        "설명": "본 연구실은 단백질 분해 메커니즘의 생화학적 이해를 바탕으로, 융합적 방법론(생화학, 분자생물 학, 동물실험 및 인체유래 샘플 등)을 이용하여 암이나 퇴행성 뇌질환의 치료 및 예방으로의 적용"
+      },
+      "연구주제": [],
+      "기술및방법": [],
+      "학력경력": [],
+      "논문": [
+        "1. Jeong D et al. TTumor-promoting UBR4 coordinates impaired mitophagy-associated senescence and lung ad- enocarcinoma pathogenesis. Proc Natl Acad Sci USA (accepted) ---------- IF 9.4",
+        "2. Kim J et al. Extracellular vesicle-mediated delivery of 20S proteasomes enhances tau degradation in recipient cells. J Extracell Vesicle (accepted) ---------- IF 16.0 3 Kim J et al. Targeted protein degradation directly engaging lysosomes or proteasomes. Chem Soc Rev 53, 3253 (2024) ---------- IF 40.4",
+        "3. Le LL et al. Self-aggregating tau fragments recapitulate pathologic phenotype and neurotoxicity of Alzheimer’s disease in mice. Advanced Science 10, 2302035 (2023) ---------- IF 15.1",
+        "4. Choi WH. et al. ECPAS/Ecm29-mediated 26S proteasome disassembly is an adaptive response to glucose starvation. Cell Reports 42, 112701 (2023) ---------- IF 8.8 6 Shim SM. et al. The Cys/N-degron pathway modulates pexophagy through the N-terminal oxidation and arginyla- tion of ACAD10. Autophagy 19, 1641-1661 (2022) ---------- IF 14.6",
+        "5. Choi WH et al. Aggresomal sequestration and STUB1-mediated ubiquitination during mammalian proteaphagy of inhibited proteasomes. Proc Natl Acad Sci USA 117, 19190-19200 (2020) ---------- IF 9.4 8 Lee JH et al. Negative-Feedback Coordination between Proteasomal Activity and Autophagic Flux. Autophagy 15, 726-728 (2019) ---------- IF 14.6",
+        "6. Choi TS et al. Supramolecular modulation of structural polymorphism in pathogenic a-synuclein fibrils using Cu(II) coordination. Angewandte Chemie Int Ed 57, 3099-3103 (2018) ---------- IF 16.6 - 1 -"
+      ],
+      "학생지도": {
+        "특징": "",
+        "진로": ""
+      }
+    },
+    {
+      "기본정보": {
+        "교수이름": "이용석",
+        "영문이름": "",
+        "학위": "PhD",
+        "직급": "",
+        "대학명": "서울대학교",
+        "학과명": "의과대학",
+        "이메일": "",
+        "전화번호": ""
+      },
+      "연구실": {
+        "연구실명": "",
+        "연구실웹사이트": "http://brain.snu.ac.kr",
+        "위치": ""
+      },
+      "연구분야": {
+        "키워드": ", , , , , , multiomics",
+        "설명": ""
+      },
+      "연구주제": [],
+      "기술및방법": [],
+      "학력경력": [],
+      "논문": [
+        "1. Kang MK, Choi J, ...., Lee YS*. Aberrant ERK signaling in astrocytes impairs learning and memory in RASopathy-associated BRAF mutant mouse models. Journal of Clinical Investigation."
+      ],
+      "학생지도": {
+        "특징": "",
+        "진로": ""
+      }
+    },
+    {
+      "기본정보": {
+        "교수이름": "이지연",
+        "영문이름": "",
+        "학위": "MD, PhD",
+        "직급": "",
+        "대학명": "서울대학교",
+        "학과명": "의과대학",
+        "이메일": "ddang1@snu.ac.kr",
+        "전화번호": "02-740-8379"
+      },
+      "연구실": {
+        "연구실명": "Neural Development and Anomaly Laboratory",
+        "연구실웹사이트": "https://ndal.snu.ac.kr/",
+        "위치": ""
+      },
+      "연구분야": {
+        "키워드": "",
+        "설명": "서울대학교병원 신경외과, 서울대학교 의과대학 의학과 해부학교실 소속 연구실로 신경외과 전문의인 PI 아래에서 기초 연구와 임상 연구를 함께 경험할 수 있는 장점이 있다. 본 연구실은 뇌 오가노이드"
+      },
+      "연구주제": [],
+      "기술및방법": [
+        "western blot"
+      ],
+      "학력경력": [],
+      "논문": [],
+      "학생지도": {
+        "특징": "",
+        "진로": ""
+      }
+    },
+    {
+      "기본정보": {
+        "교수이름": "이진구",
+        "영문이름": "high-TOP",
+        "학위": "M.D., Ph.D.",
+        "직급": "부교수",
+        "대학명": "서울대학교",
+        "학과명": "의과대학",
+        "이메일": "jinkulee@snu.ac.kr",
+        "전화번호": "02-740-8201"
+      },
+      "연구실": {
+        "연구실명": "세포중개의학연구실(https://snucm.elsevierpure.com/en/persons/jin-ku-lee/연구관 230호)",
+        "연구실웹사이트": "https://snucm.elsevierpure.com/en/persons/jin-ku-lee/연구관",
+        "위치": ""
+      },
+      "연구분야": {
+        "키워드": "환자종양유래 세포 및 오가노이드 배양, 약물 스크리닝, 종양유전체, 항암맞춤치료",
+        "설명": "저희 실험실에서는 난소암, 간암, 위암, 대장암 등 환자종양유래세포 및 세포주를 이용한 3차원 오가노이 드 배양기법을 최적화하고 이를 이용한 대용량 약물 스크리닝 및 항암제 감수성 표지마커 발굴하는 연구"
+      },
+      "연구주제": [],
+      "기술및방법": [],
+      "학력경력": [
+        "1997-2003 의학사, 서울대학교 의과대학 (의학)",
+        "2007-2009 의학석사, 서울대학교 의과대학 의학과 (약리학)",
+        "2009-2013 의학박사, 서울대학교 대학원 의과학과 (의과학)",
+        "2013-2018 책임연구원, 삼성서울병원",
+        "2018-2020 조교수, 아주대학교 의과대학 생화학교실",
+        "2020- 부교수, 서울대학교 대학원 의과학과, 서울대학교 의과대학 해부학교실"
+      ],
+      "논문": [
+        "1. Lee JJ, Kang HJ, Kim D, Lim SO, Kim SS, Kim G, Kim S, Lee JK, Kim J. expHRD: an individualized, transcriptome-based prediction model for homologous recombination deficiency assessment in cancer, BMC Bioinformatics, 2024 Jul 12;25(1):236 (교신)",
+        "2. Yoon JH, Yoon HN, Kang HJ, ...Lee JK, Jang M., Empowering pancreatic tumor homing with augmented anti-tumor potency of CXCR2-tethered CAR-NK cells. Mol Ther Oncol. 2024 19;32(1):200777.(교신)",
+        "3. Jun HR, Kang HJ, Ju SH, Kim JE, Jeon SY, Ku B, Lee JJ, Kim M, Kim MJ, Choi JJ, Noh JJ, Kim HS, Lee JW*, Lee JK*, Lee DW*. High-throughput organo-on-pillar (high-TOP) array system for three-dimensional ex vivo drug testing. Biomaterials. 2023 May;296:122087.(교신)",
+        "4. Lee JJ, Kang HJ, Kim SS, Charton C, Kim J*, Lee JK*. Unraveling the Transcriptomic Signatures of Homologous Recombination Deficiency in Ovarian Cancers. Adv Biol (Weinh). 2022 Dec;6(12):e2200060."
+      ],
+      "학생지도": {
+        "특징": "",
+        "진로": ""
+      }
+    },
+    {
+      "기본정보": {
+        "교수이름": "이창한",
+        "영문이름": "Chang-Han Lee",
+        "학위": "",
+        "직급": "",
+        "대학명": "서울대학교",
+        "학과명": "의과대학",
+        "이메일": "chlee-antibody@snu.ac.kr",
+        "전화번호": "02-740-8287"
+      },
+      "연구실": {
+        "연구실명": "",
+        "연구실웹사이트": "https://www.theleelab-antibody.com/",
+        "위치": "423호 실"
+      },
+      "연구분야": {
+        "키워드": "",
+        "설명": "I) Antibody discovery: 신규 항체 치료제 개발 및 세포 치료제 개발을 위해 신규 항원에 대한 새로운 항체 발굴 연구를 수행하고 있습니다. 신규 항체 치료제를 개발하기 위해 우리는 a) naive BCR library, b)"
+      },
+      "연구주제": [],
+      "기술및방법": [],
+      "학력경력": [
+        "2020.03-2020.08 조교수 서울대학교 의과대학 대학원 의과학과",
+        "2024.09- 부교수 서울대학교 의과대학 약리학교실"
+      ],
+      "논문": [
+        "1. HN Lee et al., Novel FRET-Based Immunological Synapse Biosensor for the Prediction of CAR-T Cell Function Small Methods 2024 (IF: 10.7)",
+        "2. IS Kim et al., Tracking Antigen-Specific TCR Clonotypes in SARS-CoV-2 Infection Reveals Distinct Severity Trajectories Journal of Medical Virology 2023 (IF: 12.7)"
+      ],
+      "학생지도": {
+        "특징": "",
+        "진로": ""
+      }
+    },
+    {
+      "기본정보": {
+        "교수이름": "이철환",
+        "영문이름": "",
+        "학위": "Ph.D.",
+        "직급": "",
+        "대학명": "서울대학교",
+        "학과명": "의과대학",
+        "이메일": "chulhwan@snu.ac.kr",
+        "전화번호": "02-740-8133"
+      },
+      "연구실": {
+        "연구실명": "",
+        "연구실웹사이트": "http://chulhwanlab.com",
+        "위치": ""
+      },
+      "연구분야": {
+        "키워드": "",
+        "설명": "본 연구실은 인간 질병 발병의 원인을 후성유전학적 관점에서 연구하고 있습니다. 평균수명의 연장 으로 인해 현대인에게는 치매, 심장병, 대장염, 그리고 암의 발병이 증가하고 있습니다. 이러한 질병은"
+      },
+      "연구주제": [],
+      "기술및방법": [
+        "Western Blot"
+      ],
+      "학력경력": [
+        "2011-2015 PostDoc, UTSW Medical Center ( )",
+        "2015-2020 PostDoc/Research Specialist, HHMI/NYU ( )"
+      ],
+      "논문": [],
+      "학생지도": {
+        "특징": "",
+        "진로": ""
+      }
+    },
+    {
+      "기본정보": {
+        "교수이름": "조성엽",
+        "영문이름": "",
+        "학위": "M.D., Ph.D.",
+        "직급": "",
+        "대학명": "서울대학교",
+        "학과명": "의과대학",
+        "이메일": "csybio@snu.ac.kr",
+        "전화번호": "02-740-8241"
+      },
+      "연구실": {
+        "연구실명": "",
+        "연구실웹사이트": "",
+        "위치": ""
+      },
+      "연구분야": {
+        "키워드": "",
+        "설명": "암(cancer)은 돌연변이와 같은 유전체 수준의 이상 (genomic alteration)에 의해 발생하는 것으 로 알려져 있으며, 암유전체의 변화는 환자의 치료 반응성 및 예후와 밀접한 관련이 있다고 보"
+      },
+      "연구주제": [],
+      "기술및방법": [
+        "Western Blot"
+      ],
+      "학력경력": [],
+      "논문": [
+        "1. Jang D et al., RNA N6-Methyladenosine-Binding Protein YTHDFs Redundantly Attenuate Cancer Immunity by Downregulating IFN-γ Signaling in Gastric Cancer. Adv Sci (Weinh). 2025 Jan;12(3):e2410806 (교신저자)",
+        "2. Oh Y et al., Genome-wide CRISPR screening identifies tyrosylprotein sulfotransferase-2 as a target for augmenting anti-PD1 efficacy. Mol Cancer. 2024 Aug 2;23(1):155 (교신저자)",
+        "3. Jung HR et al, Targeting the m6A RNA methyltransferase METTL3 attenuates the development of kidney fibrosis. Exp Mol Med. 2024 Feb;56(2):355-369 (교신저자)",
+        "4. Oh J et al., Augmentation of the RNA m6A reader signature is associated with poor survival by enhancing cell proliferation and EMT across cancer types. Exp Mol Med. 2022 Jul;54(7):906-921. (교신저자)",
+        "5. Na D et al., Predictive biomarkers for 5-fluorouracil and oxaliplatin-based chemotherapy in gastric cancers via profiling of patient-derived xenografts. Nat Commun. 2021 Aug 10;12(1):4840. (제1저자)",
+        "6. Lee SH et al., Bifidobacterium bifidum strains synergize with immune checkpoint inhibitors to reduce tumour bur- den in mice. Nat Microbiol. 2021 Mar;6(3):277-288. (제1저자)"
+      ],
+      "학생지도": {
+        "특징": "",
+        "진로": ""
+      }
+    },
+    {
+      "기본정보": {
+        "교수이름": "조주연",
+        "영문이름": "",
+        "학위": "Ph.D.",
+        "직급": "교수",
+        "대학명": "서울대학교",
+        "학과명": "의과대학",
+        "이메일": "joocho@snu.ac.kr",
+        "전화번호": "02-740-8286"
+      },
+      "연구실": {
+        "연구실명": "약리대사체학 연구실(http://cpt.snu.ac.kr, 융합관 502호 실험실)",
+        "연구실웹사이트": "http://cpt.snu.ac.kr",
+        "위치": "502호 실"
+      },
+      "연구분야": {
+        "키워드": "Metabolomics, Pharmacometabolomics, Clinical Pharmacology",
+        "설명": "포스트게놈 시대에 정밀의학 실현을 위하여 유전체뿐만 아니라, 다양한 외적 요인에 의해 변화되는 표 현형을 반영하는 대사체 연구가 필요하다. 본 연구실은 환자 코호트 시료와 임상시험 시료를 사용하여"
+      },
+      "연구주제": [],
+      "기술및방법": [],
+      "학력경력": [
+        "1998 약학박사, 덕성여자대학교 대학원 약학과 (약물학 전공)",
+        "1998-2007 PostDoc, 연구교수, 서울대학교 의과대학, 서울대학교병원 (임상약리학)",
+        "2011-2020 조교수, 부교수, 서울대학교 의과대학 임상약리학교실",
+        "2020-현재 교수, 서울대학교 의과학과, 의과대학 임상약리학교실"
+      ],
+      "논문": [
+        "1. A parallel reaction monitoring.mass spectrometric method for studying lipid biosynthesis in vitro using 13C16-pal- mitate as an isotope tracer. Analytica Chimica Acta 2025",
+        "2. Effect of Narrowband Ultraviolet B Phototherapy on Systemic Metabolome in Korean Patients With Psoriasis. Experimental Dermatology 2024",
+        "3. Nasal symbiont Staphylococcus epidermidis restricts influenza A virus replication via the creation of a poly- amine-deficient cellular environment. Communications Biology 2024",
+        "4. Metabolic profiling of psoriasis vulgaris and palmoplantar pustulosis. Experimental Dermatology 2024",
+        "5. Metabolomic Characteristics of Nontuberculous Mycobacterial Pulmonary Disease. J Infect Dis. 2024",
+        "6. Serum, Urine, and Fecal Metabolome Alterations in the Gut Microbiota in Response to Lifestyle Interventions in Pediatric Obesity: A Non-Randomized Clinical Trial. Nutrients. 2023"
+      ],
+      "학생지도": {
+        "특징": "",
+        "진로": ""
+      }
+    },
+    {
+      "기본정보": {
+        "교수이름": "최경호",
+        "영문이름": "",
+        "학위": "M.D., Ph.D.",
+        "직급": "부교수",
+        "대학명": "서울대학교",
+        "학과명": "의과대학",
+        "이메일": "",
+        "전화번호": ""
+      },
+      "연구실": {
+        "연구실명": "",
+        "연구실웹사이트": "",
+        "위치": ""
+      },
+      "연구분야": {
+        "키워드": "",
+        "설명": ""
+      },
+      "연구주제": [],
+      "기술및방법": [],
+      "학력경력": [],
+      "논문": [
+        "1. Monovalent anti-CD3 antibodies effectively eliminate the TCR-Positive fraction of TCR-deleted allogeneic CAR-T Cells to prevent GVHD. Kim JH, Kim H, Lee AN, Park HB, Choi K. Immune Netw. 2024, 24(6):e43.",
+        "2. Improved Safety of Chimeric Antigen Receptor T Cells Indirectly Targeting Antigens via Switchable Adaptors. Nature Communications. 2024, 18;15(1):9917 .",
+        "3. Local adenoviral delivery of soluble CD200R-Ig enhances antitumor immunity by inhibiting CD200-β-catenin-driven M2 macrophage. Mol Ther Oncolytics. 2021 Dec 17;23:138-150.",
+        "4. Escape from thymic deletion and anti-leukemic effects of T cells specific for hematopoietic cell-restricted antigen. Nature Communications. 2018, 9(1):225.",
+        "5. CTLA4-CD28 chimera gene modification of T cells enhances the therapeutic efficacy of donor lymphocyte infusion for hematological malignancy. Exp Mol Med. 2017, 49(7):e360.",
+        "6. Ndrg1 is a T-cell clonal anergy factor negatively regulated by CD28 costimulation and interleukin-2. Nature Communications. 2015, 6:8698 doi: 10.1038/ncomms9698"
+      ],
+      "학생지도": {
+        "특징": "",
+        "진로": ""
+      }
+    },
+    {
+      "기본정보": {
+        "교수이름": "최민호",
+        "영문이름": "",
+        "학위": "M.D., Ph.D.",
+        "직급": "",
+        "대학명": "서울대학교",
+        "학과명": "의과대학",
+        "이메일": "mhchoi@snu.ac.kr",
+        "전화번호": "02-740-8341"
+      },
+      "연구실": {
+        "연구실명": "",
+        "연구실웹사이트": "https://snu.elsevierpure.com/en/persons/y-choi-31",
+        "위치": ""
+      },
+      "연구분야": {
+        "키워드": "",
+        "설명": "주혈흡충증(Schistosomiasis)은 주혈흡충의 유미유충에 오염된 물과의 접촉을 통해 감염되는 기 생충질환으로서 말라리아 다음으로 국제보건에서 중요한 소외열대질환(Neglected Tropical"
+      },
+      "연구주제": [],
+      "기술및방법": [],
+      "학력경력": [],
+      "논문": [
+        "1. Choi MH. Serological diagnosis of tissue-invading parasites in Korea. Ann Clin Microbiol. 2024;27(2):81-91.",
+        "2. Delaluna JO, Kang H, Chang YY, Kim M, Choi MH, Kim J, Song HB. De novo assembled mitogenome analysis of Trichuris trichiura from Korean individuals using nanopore-based long-read sequencing technology. PLoS Negl Trop Dis. 2023;17(8):e0011586.",
+        "3. Lee Y, Song HB, Jung BK, Choe G, Choi MH. Case report of urinary schistosomiasis in a returned traveler in Korea. Korean J Parasitol. 2020;58(1):51-55.",
+        "4. Jin H, Ryu K, Lee D, Vonghachack Y, Choi MH, Hong ST, Song HB. Prevalence and risk factors of intestinal hel- minthiasis in remote mountainous villages of Northern Lao PDR: A cross-sectional study. Korean J Parasitol. 2021;59(2):131-138.",
+        "5. Kim SH, Stothard JR, Rinamalo M, Rainima-Qaniuci M, Talemaitoga N, Kama M, Rafai E, Jang S, Kim JY, Oh YM, Kim EM, Hong ST, Lowry JH, Verweij JJ, Kelly-Hope LA, Choi MH. A first nation-wide assessment of soil-trans- mitted helminthiasis in Fijian primary schools, and factors associated with the infection, using a lymphatic filariasis transmission assessment survey as surveillance platform. PLoS Negl Trop Dis. 2020;14(9):e0008511."
+      ],
+      "학생지도": {
+        "특징": "",
+        "진로": ""
+      }
+    },
+    {
+      "기본정보": {
+        "교수이름": "최은영",
+        "영문이름": "Correspondence",
+        "학위": "PhD",
+        "직급": "교수",
+        "대학명": "서울대학교",
+        "학과명": "의과대학",
+        "이메일": "eycii@snu.ac.kr",
+        "전화번호": "02-740-8919"
+      },
+      "연구실": {
+        "연구실명": "",
+        "연구실웹사이트": "http://immunogenetics.snu.ac.kr.",
+        "위치": "3층 301호"
+      },
+      "연구분야": {
+        "키워드": "T세포 반응 조절, 이식거부반응, 항암 면역치료, 조혈 줄기세포 분화",
+        "설명": "1. T 세포 메모리와 관용 형성에 관한 기전의 이해 및 이를 이용한 종양면역 활성화와 이식거부 2. 조혈모세포이식 후 발생되는 이식편대숙주질환 억제를 위한 선천면역세포와 CD8 T 세포 면역"
+      },
+      "연구주제": [
+        "2002: 연구교수, 서울대학교 의과대학\n2004"
+      ],
+      "기술및방법": [
+        "Gene cloning"
+      ],
+      "학력경력": [
+        "1990: 학사, 서울대학교 자연과학대학 (생물학)",
+        "1992: 석사, 서울대학교 자연과학대학 (유전학)",
+        "1997: 박사, 서울대학교 의과대학 (면역학)",
+        "1999- 2002: Post-Doc. 미국 Jackson 연구소 (면역유전학)",
+        "1999- 2002: 연구교수, 서울대학교 의과대학",
+        "2004- 현재 : 조교수/ 부교수/교수, 서울대학교 의과대학 대학원 의과학과"
+      ],
+      "논문": [],
+      "학생지도": {
+        "특징": "",
+        "진로": ""
+      }
+    },
+    {
+      "기본정보": {
+        "교수이름": "최형진",
+        "영문이름": "There is no sincerer love than the love of food.",
+        "학위": "MD, PhD",
+        "직급": "부교수",
+        "대학명": "서울대학교",
+        "학과명": "의과대학",
+        "이메일": "hjchoi@snu.ac.kr",
+        "전화번호": "010-9083-9655"
+      },
+      "연구실": {
+        "연구실명": "대사조절 기능신경해부학 연구실 (http://fnmr.snu.ac.kr/) :",
+        "연구실웹사이트": "http://fnmr.snu.ac.kr/",
+        "위치": ""
+      },
+      "연구분야": {
+        "키워드": "에너지대사 조절 뇌중추 역할, 뇌정위수술 동물모델을 통한 뇌중추 대사조절기전",
+        "설명": "“음식에 대한 사랑보다 더 진실된 사랑은 없다. (There is no sincerer love than the love of food.)”"
+      },
+      "연구주제": [],
+      "기술및방법": [],
+      "학력경력": [
+        "1996-2002 의학사, 서울대학교 의과대학(의학)",
+        "2006-2011 의학석사,서울대학교 대학원 의학과(내과학)",
+        "2011-2013 의학석사,서울대학교 대학원 의학과(분자유전체의학)",
+        "2015-2019 조교수, 서울대학교 의과대학 의과학과",
+        "2019-2024 부교수, 서울대학교 의과대학 의과학과",
+        "2024-현재 교수, 서울대학교 자연대학 뇌인지과학과, 의과대학 의과학과"
+      ],
+      "논문": [],
+      "학생지도": {
+        "특징": "",
+        "진로": ""
+      }
+    },
+    {
+      "기본정보": {
+        "교수이름": "신정환",
+        "영문이름": "",
+        "학위": "",
+        "직급": "",
+        "대학명": "서울대학교",
+        "학과명": "의과대학",
+        "이메일": "",
+        "전화번호": ""
+      },
+      "연구실": {
+        "연구실명": "",
+        "연구실웹사이트": "https://sites.google.com/view/jung-lab",
+        "위치": ""
+      },
+      "연구분야": {
+        "키워드": "",
+        "설명": ""
+      },
+      "연구주제": [
+        "조교수, 서울대학교 의과대학 신경과\n세부 연구목표\n세부 연구주제"
+      ],
+      "기술및방법": [],
+      "학력경력": [
+        "2004-2010 학사, 서울대학교 의과대학(의학)",
+        "2013-2015 석사, 서울대학교 대학원 의학과 (신경과학)",
+        "2015-2019 박사, 한국과학기술원 (시스템 신경과학)",
+        "2022- 조교수, 서울대학교 의과대학 신경과"
+      ],
+      "논문": [],
+      "학생지도": {
+        "특징": "",
+        "진로": ""
+      }
+    }
+  ]
+}
