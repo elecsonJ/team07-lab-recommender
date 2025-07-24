@@ -107,7 +107,7 @@ class StreamlitRAGApp:
                         rag_system.create_vector_store()
                     
                     # QA 체인 설정
-                    rag_system.setup_qa_chain(k=5)
+                    rag_system.setup_qa_chains(k=5)
                     
                     st.session_state.rag_system = rag_system
                     st.success("✅ RAG 시스템이 성공적으로 초기화되었습니다!")

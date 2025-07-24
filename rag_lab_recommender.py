@@ -69,7 +69,8 @@ class LabRecommenderRAG:
         )
         
         self.vector_store = None
-        self.qa_chain = None
+        self.brief_qa_chain = None  # 간략한 추천용
+        self.detail_qa_chain = None  # 상세 정보용
         self.conversation_history = ConversationHistory()
         
     def load_and_process_data(self):
@@ -207,8 +208,8 @@ class LabRecommenderRAG:
         # 4. 나머지는 일반 질문
         return {"type": "general_info", "reason": "대학원 일반 정보"}
     
-    def setup_qa_chain(self, k=5):
-        """RAG QA 체인 설정"""
+    def setup_qa_chains(self, k=5):
+        """brief용과 detail용 QA 체인 분리 설정"""
         if self.vector_store is None:
             raise ValueError("벡터 저장소가 초기화되지 않았습니다.")
         
@@ -222,8 +223,31 @@ class LabRecommenderRAG:
             }
         )
         
-        # 프롬프트 템플릿 정의
-        prompt_template = """다음은 대학원 교수진의 상세 정보입니다. 학생의 질문에 기반하여 적절한 답변을 제공해주세요.
+        # 간략한 추천용 프롬프트 템플릿
+        brief_prompt_template = """다음은 대학원 교수진의 상세 정보입니다. 학생의 관심 분야에 맞는 연구실을 추천해주세요.
+
+교수진 정보:
+{context}
+
+학생의 질문: {question}
+
+답변 가이드라인:
+1. 학생의 관심 분야와 가장 유사한 연구 분야를 가진 교수를 2-3명 추천
+2. 각 교수에 대해 다음 정보를 포함하여 추천:
+   - 교수명과 연구실명
+   - 대학명과 학과명 (서울대학교 의과대학)
+   - 주요 연구분야와 키워드 (구체적으로 2-3줄)
+   - 대표 연구주제나 사용 기술 (실제 내용 기반)
+   - 왜 이 분야에 적합한지 추천 이유
+   - 연락처 (이메일)
+3. 마지막에 "더 자세한 정보가 궁금하시면 특정 교수님 이름으로 질문해주세요!" 안내
+
+한국어로 친근하고 도움이 되는 톤으로 답변해주세요.
+
+답변:"""
+
+        # 상세 정보용 프롬프트 템플릿
+        detail_prompt_template = """다음은 대학원 교수진의 상세 정보입니다. 특정 교수에 대한 학생의 질문에 구체적으로 답변해주세요.
 
 교수진 정보:
 {context}
@@ -232,49 +256,69 @@ class LabRecommenderRAG:
 
 답변 가이드라인:
 
-**초기 연구실 추천의 경우:**
-1. 학생의 관심 분야와 가장 유사한 연구 분야를 가진 교수를 2-3명 추천
-2. 각 교수에 대해 간략하게 다음 정보만 제시:
-   - 교수명과 연구실명
-   - 대학명과 학과명 (서울대학교 의과대학)
-   - 핵심 연구분야 (1-2줄 요약)
-   - 추천 이유 (1-2줄)
-3. "더 자세한 정보가 궁금하시면 특정 교수님에 대해 질문해주세요!"라고 안내
+**논문 관련 질문의 경우:**
+- 해당 교수의 모든 논문 목록을 나열
+- 각 논문 제목을 해석하여 연구 내용 설명
+- 연구 트렌드와 발전 방향 분석
+- 최신 연구 동향과 의미
 
-**특정 교수에 대한 세부 질문의 경우:**
-1. 해당 교수의 상세 정보를 활용하여 구체적으로 답변
-2. 논문 제목 해석, 연구 트렌드 분석, 학력 배경 등 심화 정보 제공
-3. 질문 유형에 따라 적절한 정보 선별 (논문/연구주제/학력 등)
+**연구분야 질문의 경우:**
+- 상세한 연구주제들과 배경
+- 사용하는 기술과 방법론 구체적 설명
+- 연구실만의 특색과 강점
+- 관련 연구 트렌드
 
-**일반 질문의 경우:**
-1. 대학원 생활, 입학 절차 등에 대해 일반적인 조언 제공
+**경력/학력 질문의 경우:**
+- 학력 및 경력 상세 설명
+- 해외 경험이나 특별한 이력
+- 전문 분야 발전 과정
 
-한국어로 친근하고 도움이 되는 톤으로 답변해주세요.
+**연구실 관련 질문의 경우:**
+- 연구실 환경과 분위기
+- 주요 연구 프로젝트
+- 학생 지도 방식과 특징
+
+모든 상세 정보를 최대한 활용하여 구체적이고 심화된 답변을 제공하세요.
+한국어로 친근하고 전문적인 톤으로 답변해주세요.
 
 답변:"""
 
-        PROMPT = PromptTemplate(
-            template=prompt_template,
+        BRIEF_PROMPT = PromptTemplate(
+            template=brief_prompt_template,
             input_variables=["context", "question"]
         )
         
-        # QA 체인 생성
-        self.qa_chain = RetrievalQA.from_chain_type(
+        DETAIL_PROMPT = PromptTemplate(
+            template=detail_prompt_template,
+            input_variables=["context", "question"]
+        )
+        
+        # Brief QA 체인 생성 (연구분야 추천용)
+        self.brief_qa_chain = RetrievalQA.from_chain_type(
             llm=self.llm,
             chain_type="stuff",
             retriever=retriever,
-            chain_type_kwargs={"prompt": PROMPT},
+            chain_type_kwargs={"prompt": BRIEF_PROMPT},
+            return_source_documents=True
+        )
+        
+        # Detail QA 체인 생성 (교수 상세 정보용)
+        self.detail_qa_chain = RetrievalQA.from_chain_type(
+            llm=self.llm,
+            chain_type="stuff",
+            retriever=retriever,
+            chain_type_kwargs={"prompt": DETAIL_PROMPT},
             return_source_documents=True
         )
     
     def get_recommendation(self, user_query):
         """사용자 질문에 대한 연구실 추천 (구버전 호환용)"""
-        if self.qa_chain is None:
+        if self.brief_qa_chain is None:
             raise ValueError("QA 체인이 설정되지 않았습니다.")
         
         print("\n🔍 관련 연구실을 검색하고 있습니다...")
         
-        result = self.qa_chain.invoke({"query": user_query})
+        result = self.brief_qa_chain.invoke({"query": user_query})
         
         print("\n" + "="*60)
         print("🎯 연구실 추천 결과")
@@ -283,10 +327,14 @@ class LabRecommenderRAG:
         
         return result
     
+    def setup_qa_chain(self, k=5):
+        """구버전 호환용 - setup_qa_chains 호출"""
+        self.setup_qa_chains(k)
+    
     def process_new_search(self, user_query: str) -> Dict[str, Any]:
         """새로운 검색 처리 - 간략한 추천 모드"""
         print("\n🔍 새로운 검색을 시작합니다...")
-        result = self.qa_chain.invoke({"query": user_query})
+        result = self.brief_qa_chain.invoke({"query": user_query})
         return result
     
     def process_refine_previous(self, user_query: str) -> Dict[str, Any]:
@@ -316,7 +364,7 @@ class LabRecommenderRAG:
     def process_professor_detail(self, user_query: str) -> Dict[str, Any]:
         """특정 교수 상세 정보 처리"""
         print("\n👨‍🏫 특정 교수님에 대한 상세 정보를 검색합니다...")
-        result = self.qa_chain.invoke({"query": user_query})
+        result = self.detail_qa_chain.invoke({"query": user_query})
         return result
     
     def process_general_info(self, user_query: str) -> Dict[str, Any]:
@@ -387,7 +435,7 @@ def main():
         rag_system.create_vector_store()
     
     # QA 체인 설정
-    rag_system.setup_qa_chain(k=args.k)
+    rag_system.setup_qa_chains(k=args.k)
     
     print("\n🎓 대학원 연구실 추천 AI에 오신 것을 환영합니다!")
     print("관심있는 연구 분야나 주제를 자유롭게 입력해주세요.")
