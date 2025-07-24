@@ -12,7 +12,7 @@ from typing import Dict, List, Any
 from dataclasses import dataclass, field
 
 # 환경변수 로드
-load_dotenv('/Users/hanjaehoon/claude_playground/BigDataCampProject/.env')
+load_dotenv()
 
 @dataclass
 class ConversationHistory:
@@ -352,7 +352,7 @@ def main():
     args = parser.parse_args()
     
     # 데이터 경로
-    data_path = "/Users/hanjaehoon/claude_playground/team_07/team07_data/professors_final_complete.json"
+    data_path = "professors_final_complete.json"
     
     # RAG 시스템 초기화
     rag_system = LabRecommenderRAG(data_path)

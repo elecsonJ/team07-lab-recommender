@@ -90,7 +90,7 @@ st.markdown("""
 
 class StreamlitRAGApp:
     def __init__(self):
-        self.data_path = "/Users/hanjaehoon/claude_playground/team_07/team07_data/professors_final_complete.json"
+        self.data_path = "professors_final_complete.json"
         self.rag_system = None
         self.init_rag_system()
     
