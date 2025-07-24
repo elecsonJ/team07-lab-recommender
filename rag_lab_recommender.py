@@ -182,6 +182,40 @@ class LabRecommenderRAG:
         followup_patterns = ["그 중에서", "더 자세히", "추가로", "그런데", "또", "그리고"]
         return any(pattern in query for pattern in followup_patterns)
     
+    def contains_korean(self, text: str) -> bool:
+        """텍스트에 한국어가 포함되어 있는지 확인"""
+        return any('\uAC00' <= char <= '\uD7A3' for char in text)
+    
+    def enhance_query_with_translation(self, query: str) -> str:
+        """한국어 질문을 한영 혼합으로 확장"""
+        if not self.contains_korean(query):
+            return query
+            
+        try:
+            # 연구 키워드만 간단히 번역
+            translation_prompt = f"""다음 한국어 연구 관련 질문에서 핵심 영어 키워드만 추출해주세요:
+            
+질문: {query}
+
+규칙:
+- 연구분야, 기술, 방법론 관련 용어만 영어로
+- 단순한 단어 나열로 출력
+- 예: "AI machine learning cancer treatment"
+
+영어 키워드:"""
+            
+            response = self.llm.invoke(translation_prompt)
+            english_keywords = response.content.strip()
+            
+            # 한국어 + 영어 키워드 결합
+            enhanced = f"{query} {english_keywords}"
+            print(f"🔍 쿼리 확장: {query} → {enhanced}")
+            return enhanced
+            
+        except Exception as e:
+            print(f"⚠️ 번역 실패, 원본 쿼리 사용: {e}")
+            return query
+    
     def is_research_related(self, query: str) -> bool:
         """연구분야 관련 질문인지 확인"""
         research_keywords = [
@@ -331,10 +365,12 @@ class LabRecommenderRAG:
         """구버전 호환용 - setup_qa_chains 호출"""
         self.setup_qa_chains(k)
     
-    def process_new_search(self, user_query: str) -> Dict[str, Any]:
-        """새로운 검색 처리 - 간략한 추천 모드"""
+    def process_new_search(self, user_query: str, enhanced_query: str = None) -> Dict[str, Any]:
+        """새로운 검색 처리 - 간략한 추천 모드 (쿼리 확장 적용)"""
         print("\n🔍 새로운 검색을 시작합니다...")
-        result = self.brief_qa_chain.invoke({"query": user_query})
+        # 이미 확장된 쿼리가 있으면 사용, 없으면 원본 사용
+        query_to_use = enhanced_query if enhanced_query else user_query
+        result = self.brief_qa_chain.invoke({"query": query_to_use})
         return result
     
     def process_refine_previous(self, user_query: str) -> Dict[str, Any]:
@@ -361,10 +397,12 @@ class LabRecommenderRAG:
         response = self.llm.invoke(refined_prompt)
         return {"result": response.content, "source_documents": previous_docs}
     
-    def process_professor_detail(self, user_query: str) -> Dict[str, Any]:
-        """특정 교수 상세 정보 처리"""
+    def process_professor_detail(self, user_query: str, enhanced_query: str = None) -> Dict[str, Any]:
+        """특정 교수 상세 정보 처리 (쿼리 확장 적용)"""
         print("\n👨‍🏫 특정 교수님에 대한 상세 정보를 검색합니다...")
-        result = self.detail_qa_chain.invoke({"query": user_query})
+        # 이미 확장된 쿼리가 있으면 사용, 없으면 원본 사용
+        query_to_use = enhanced_query if enhanced_query else user_query
+        result = self.detail_qa_chain.invoke({"query": query_to_use})
         return result
     
     def process_general_info(self, user_query: str) -> Dict[str, Any]:
@@ -396,17 +434,23 @@ class LabRecommenderRAG:
         print(f"\n🤖 질문 분류: {query_type}")
         print(f"   이유: {reason}")
         
+        # 쿼리 확장 정보 저장 (스트림릿에서 표시용)
+        enhanced_query = ""
+        if query_type in ["new_search", "professor_detail"] and self.contains_korean(user_query):
+            enhanced_query = self.enhance_query_with_translation(user_query)
+            classification["enhanced_query"] = enhanced_query
+        
         # 분류에 따른 처리
         if query_type == "new_search":
-            result = self.process_new_search(user_query)
+            result = self.process_new_search(user_query, enhanced_query)
         elif query_type == "refine_previous":
             result = self.process_refine_previous(user_query)
         elif query_type == "professor_detail":
-            result = self.process_professor_detail(user_query)
+            result = self.process_professor_detail(user_query, enhanced_query)
         elif query_type == "general_info":
             result = self.process_general_info(user_query)
         else:
-            result = self.process_new_search(user_query)
+            result = self.process_new_search(user_query, enhanced_query)
         
         # 히스토리에 저장
         response_text = result["result"]

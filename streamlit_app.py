@@ -141,10 +141,12 @@ class StreamlitRAGApp:
         
         # 분류 정보 표시 (AI 응답에만)
         if role == "assistant" and classification_info:
+            enhanced_query = classification_info.get('enhanced_query', '')
             st.markdown(f"""
             <div class="classification-info">
                 <strong>🤖 질문 분류:</strong> {classification_info.get('type', 'unknown')}<br>
                 <strong>📝 이유:</strong> {classification_info.get('reason', '알 수 없음')}
+                {f'<br><strong>🔍 확장된 쿼리:</strong> {enhanced_query}' if enhanced_query else ''}
             </div>
             """, unsafe_allow_html=True)
     
