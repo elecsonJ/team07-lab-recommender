@@ -615,7 +615,14 @@
         "2014-2023 선임/책임연구원, 한국과학기술연구원 (KIST)",
         "2023-현재 교수, 서울대학교 의과대학 약리학교실"
       ],
-      "논문": [],
+      "논문": [
+        "1. Kim HB, Park G, Shin HG, Kwon D, Kim HJ, Baek I-Y, Nam M-H, Cho I-J, Kim J*, Seong J* (2025) Optogenetic control of dopamine receptor 2 reveals a novel aspect of dopaminergic neurotransmission in motor function. Journal of Neuroscience 45(1):e1473242024.",
+        "2. Lee HN, Lee S, Hong J, Yoo H, Jeong J, Kim Y-W, Shin HM, Jang M*, Lee C-H*, Kim H-R*, Seong J* (2025) Novel FRET-based Immunological Synapse Biosensor for the Prediction of Chimeric Antigen Receptor-T cell Function. Small Methods 9(3):e2401016.",
+        "3. Jeong S, Kang HW, Kim SH, Hong G-S, Nam M-H, Seong J, Yoon E-S, Cho I-J, Chung S, Bang S, Kim HN, Choi N (2023) Integration of reconfigurable microchannels into aligned three-dimensional neural networks for spatially controllable neuromodulation. Science Advances 9(10):eadf0925",
+        "4. Ryu H, Lee HN, Ju J, Park J-B, Oh E, Lin MZ*, Seong J* (2022) Combinatorial effects of RhoA and Cdc42 on the actin cytoskeleton revealed by photoswitchable GEFs. Sensors and Actuators B: Chemical 369:132316",
+        "5. Lee HN, Hyeon SJ, Kim HJ, Sim KM, Kim Y, Ju J, Lee J, Wang Y, Ryu H*, Seong J* (2022) Decreased FAK activity and focal adhesion dynamics impair proper neurite formation of medium spiny neurons in Huntington's disease. Acta Neuropathologica 144(3):521-536",
+        "6. Ju J, Lee HN, Ning L, Ryu H, Zhou XX, Chun H, Lee YW, Lee-Richerson AI, Jeong C, Lin MZ*, Seong J* (2022) Optical regulation of endogenous RhoA reveals switching of cellular responses by signal amplitude. Cell Reports 40(2):111080"
+      ],
       "학생지도": {
         "특징": "",
         "진로": ""
