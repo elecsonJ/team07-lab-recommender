@@ -3,7 +3,7 @@ import json
 import numpy as np
 from dotenv import load_dotenv
 from langchain_openai import AzureOpenAIEmbeddings, AzureChatOpenAI
-from langchain_chroma import Chroma
+from langchain_community.vectorstores import FAISS
 from langchain.schema import Document
 from langchain.chains import RetrievalQA
 from langchain.prompts import PromptTemplate
@@ -46,9 +46,9 @@ class ConversationHistory:
         self.retrieved_docs.clear()
 
 class LabRecommenderRAG:
-    def __init__(self, data_path, chroma_persist_dir="./chroma_db"):
+    def __init__(self, data_path, vector_store_path="./vector_store"):
         self.data_path = data_path
-        self.chroma_persist_dir = chroma_persist_dir
+        self.vector_store_path = vector_store_path
         
         # Azure OpenAI 임베딩 모델 초기화
         self.embeddings = AzureOpenAIEmbeddings(
@@ -118,22 +118,21 @@ class LabRecommenderRAG:
         documents = self.load_and_process_data()
         
         print("벡터 임베딩을 생성하고 있습니다...")
-        self.vector_store = Chroma.from_documents(
+        self.vector_store = FAISS.from_documents(
             documents=documents,
-            embedding=self.embeddings,
-            collection_name="lab_recommender",
-            persist_directory=self.chroma_persist_dir,
-            collection_metadata={'hnsw:space': 'cosine'}
+            embedding=self.embeddings
         )
-        print(f"벡터 저장소가 {self.chroma_persist_dir}에 저장되었습니다.")
+        # FAISS 인덱스 저장
+        self.vector_store.save_local(self.vector_store_path)
+        print(f"벡터 저장소가 {self.vector_store_path}에 저장되었습니다.")
     
     def load_vector_store(self):
         """기존 벡터 저장소 로드"""
         try:
-            self.vector_store = Chroma(
-                collection_name="lab_recommender",
-                embedding_function=self.embeddings,
-                persist_directory=self.chroma_persist_dir
+            self.vector_store = FAISS.load_local(
+                self.vector_store_path,
+                embeddings=self.embeddings,
+                allow_dangerous_deserialization=True
             )
             print("기존 벡터 저장소를 로드했습니다.")
             return True

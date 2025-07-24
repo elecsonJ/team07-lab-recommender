@@ -39,8 +39,9 @@ Thumbs.db
 .env
 .streamlit/secrets.toml
 
-# Chroma DB (벡터 저장소는 로컬에서만)
+# Vector stores (벡터 저장소는 로컬에서만)
 chroma_db/
+vector_store/
 
 # Logs
 *.log
