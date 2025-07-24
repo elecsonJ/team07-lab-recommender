@@ -159,38 +159,53 @@ class LabRecommenderRAG:
             print(f"벡터 저장소 로드 실패: {e}")
             return False
     
+    def contains_professor_name(self, query: str) -> bool:
+        """질문에 교수명이 포함되어 있는지 확인"""
+        professor_names = [
+            "강건욱", "강홍기", "구자록", "김동현", "김명환", "김성준", "김종일", "김현제", "김현진",
+            "박상민", "박성준", "박수경", "박정규", "방예지", "서인석", "성지혜", "신현무", "여선주",
+            "이민재", "이용석", "이지연", "이진구", "이창한", "이철환", "조성엽", "조주연", "최경호",
+            "최민호", "최은영", "최형진", "신정환"
+        ]
+        for name in professor_names:
+            if name in query:
+                return True
+        return False
+    
+    def can_answer_with_previous(self, query: str) -> bool:
+        """이전 검색 결과로 답변 가능한지 확인"""
+        if not self.conversation_history.retrieved_docs:
+            return False
+        
+        # 단순한 후속 질문 패턴 확인
+        followup_patterns = ["그 중에서", "더 자세히", "추가로", "그런데", "또", "그리고"]
+        return any(pattern in query for pattern in followup_patterns)
+    
+    def is_research_related(self, query: str) -> bool:
+        """연구분야 관련 질문인지 확인"""
+        research_keywords = [
+            "연구", "AI", "인공지능", "머신러닝", "바이오", "의료", "생명과학", "분자", "세포",
+            "유전", "면역", "영상", "신경", "뇌", "암", "종양", "치료", "진단", "약물",
+            "실험실", "연구실", "교수", "추천", "관심", "하고싶다", "배우고싶다"
+        ]
+        return any(keyword in query for keyword in research_keywords)
+    
     def classify_query(self, new_query: str) -> Dict[str, Any]:
-        """GPT-4o-mini를 사용하여 질문 분류"""
-        classification_prompt = f"""
-이전 대화: {self.conversation_history.get_context()}
-새 질문: {new_query}
-
-다음을 판단해주세요:
-1. 검색 유형: 
-   - "new_search": 완전히 새로운 교수/연구실 검색
-   - "refine_previous": 이전 추천 결과 내에서 추가 필터링
-   - "hybrid_search": 이전 결과 + 새로운 검색 병합
-   - "general_question": 교수/연구실 추천과 무관한 일반 질문
-
-2. 이유: (한 문장)
-
-JSON 형태로 응답:
-{{"type": "...", "reason": "...", "search_needed": true/false}}
-"""
+        """개선된 질문 분류 시스템"""
+        # 1. 교수명 언급 체크
+        if self.contains_professor_name(new_query):
+            return {"type": "professor_detail", "reason": "특정 교수 언급"}
         
-        # 질문 분류를 위한 LLM 호출
-        response = self.llm.invoke(classification_prompt)
+        # 2. 이전 결과로 답변 가능한지 체크
+        if self.can_answer_with_previous(new_query):
+            return {"type": "refine_previous", "reason": "이전 결과 활용 가능"}
         
-        try:
-            # JSON 파싱
-            import re
-            json_match = re.search(r'\{[^}]+\}', response.content)
-            if json_match:
-                result = json.loads(json_match.group())
-                return result
-        except:
-            # 파싱 실패시 기본값
-            return {"type": "new_search", "reason": "분류 실패", "search_needed": True}
+        # 3. 연구분야 관련 질문인지 체크
+        if self.is_research_related(new_query):
+            return {"type": "new_search", "reason": "새로운 연구분야 검색"}
+        
+        # 4. 나머지는 일반 질문
+        return {"type": "general_info", "reason": "대학원 일반 정보"}
     
     def setup_qa_chain(self, k=5):
         """RAG QA 체인 설정"""
@@ -269,7 +284,7 @@ JSON 형태로 응답:
         return result
     
     def process_new_search(self, user_query: str) -> Dict[str, Any]:
-        """새로운 검색 처리"""
+        """새로운 검색 처리 - 간략한 추천 모드"""
         print("\n🔍 새로운 검색을 시작합니다...")
         result = self.qa_chain.invoke({"query": user_query})
         return result
@@ -298,44 +313,26 @@ JSON 형태로 응답:
         response = self.llm.invoke(refined_prompt)
         return {"result": response.content, "source_documents": previous_docs}
     
-    def process_hybrid_search(self, user_query: str) -> Dict[str, Any]:
-        """이전 결과 + 새 검색 병합"""
-        print("\n🔄 하이브리드 검색을 수행합니다...")
-        
-        # 새로운 검색 수행
-        new_result = self.qa_chain.invoke({"query": user_query})
-        
-        if self.conversation_history.retrieved_docs:
-            # 이전 결과와 병합
-            previous_docs = self.conversation_history.retrieved_docs[-1]
-            combined_docs = list(set(previous_docs[:3] + new_result["source_documents"][:3]))
-            
-            context_text = "\n\n".join([doc.page_content for doc in combined_docs])
-            
-            hybrid_prompt = f"""
-관련 교수진 정보:
-{context_text}
-
-학생의 질문: {user_query}
-
-위 정보를 종합하여 가장 적합한 연구실을 추천해주세요.
-"""
-            
-            response = self.llm.invoke(hybrid_prompt)
-            return {"result": response.content, "source_documents": combined_docs}
-        
-        return new_result
+    def process_professor_detail(self, user_query: str) -> Dict[str, Any]:
+        """특정 교수 상세 정보 처리"""
+        print("\n👨‍🏫 특정 교수님에 대한 상세 정보를 검색합니다...")
+        result = self.qa_chain.invoke({"query": user_query})
+        return result
     
-    def process_general_question(self, user_query: str) -> Dict[str, Any]:
-        """일반 질문 처리 (RAG 없이)"""
-        print("\n💬 일반 질문에 답변합니다...")
+    def process_general_info(self, user_query: str) -> Dict[str, Any]:
+        """일반 정보 처리 (RAG 없이)"""
+        print("\n💬 대학원 일반 정보에 답변합니다...")
         
         general_prompt = f"""
-대화 맥락: {self.conversation_history.get_context()}
+대학원 일반 질문: {user_query}
 
-질문: {user_query}
+다음과 같은 주제에 대해 도움을 드릴 수 있습니다:
+- 대학원 입학 절차 및 준비사항
+- 연구실 생활 및 연구 과정
+- 지원 자격 및 요구사항
+- 대학원생으로서의 일반적인 조언
 
-대학원 관련 일반적인 질문에 답변해주세요. 입학 절차, 연구 생활, 지원 자격 등 다양한 주제에 대해 도움을 드릴 수 있습니다.
+친근하고 도움이 되는 톤으로 답변해주세요.
 """
         
         response = self.llm.invoke(general_prompt)
@@ -356,10 +353,10 @@ JSON 형태로 응답:
             result = self.process_new_search(user_query)
         elif query_type == "refine_previous":
             result = self.process_refine_previous(user_query)
-        elif query_type == "hybrid_search":
-            result = self.process_hybrid_search(user_query)
-        elif query_type == "general_question":
-            result = self.process_general_question(user_query)
+        elif query_type == "professor_detail":
+            result = self.process_professor_detail(user_query)
+        elif query_type == "general_info":
+            result = self.process_general_info(user_query)
         else:
             result = self.process_new_search(user_query)
         
