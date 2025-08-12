@@ -1,63 +1,182 @@
-# 🎓 대학원 연구실 추천 AI
+# 🎓 Graduate School Lab Recommender AI
 
-RAG(Retrieval-Augmented Generation) 기술을 활용한 대학원 연구실 추천 시스템
+An intelligent graduate school laboratory recommendation system powered by **RAG (Retrieval-Augmented Generation)** technology and **Agentic AI** for adaptive query processing.
 
-## 🚀 웹 앱 접속
+## 🏗️ System Architecture
 
-배포된 웹 앱: [https://team07-lab-recommender.streamlit.app](https://team07-lab-recommender.streamlit.app)
+This system implements a sophisticated **hybrid search strategy** that combines multiple AI technologies:
 
-## 📋 주요 기능
+```
+User Query → Query Classification → RAG Search → Quality Assessment → Web Search (Fallback) → Response Generation
+```
 
-- **지능형 질문 분류**: 사용자 질문을 자동으로 분석하여 적절한 검색 방식 선택
-- **맞춤형 연구실 추천**: 관심 분야에 맞는 교수/연구실 추천
-- **대화형 인터페이스**: 자연스러운 대화를 통한 상세 질문 및 답변
-- **실시간 응답**: GPT-4o-mini 모델 기반 빠른 응답
+### Core Components
 
-## 🔧 기술 스택
+- **RAG Engine**: Vector-based similarity search using professor research profiles
+- **Agentic AI**: Adaptive strategy selection based on query type and result quality
+- **Conversational Memory**: Context-aware dialogue management for follow-up questions
+- **Hybrid Search**: RAG-first approach with intelligent web search fallback
 
-- **Frontend**: Streamlit
-- **Backend**: LangChain + GPT-4o-mini
-- **Vector DB**: Chroma
-- **Embeddings**: text-embedding-3-small
-- **Data**: 서울대학교 의과대학 교수진 31명
+## 🔍 Technical Implementation
 
-## 💡 사용법
+### RAG System
+- **Vector Embeddings**: `text-embedding-3-small` (1536 dimensions)
+- **Similarity Search**: Cosine similarity matching against professor profiles
+- **Vector Database**: Chroma/FAISS for efficient retrieval
+- **Threshold-based Quality Control**: Automatic fallback when similarity scores are low
 
-1. 웹 앱에 접속
-2. 관심 있는 연구 분야 입력 (예: "인공지능 연구하고 싶어")
-3. AI가 적합한 연구실 추천
-4. 추가 질문으로 세부 정보 확인
+### Agentic AI Strategy
+The system intelligently selects search strategies based on:
+- Query type classification (research area vs. general questions)
+- RAG result confidence scores
+- Conversational context and user intent
 
-## 🏗️ 로컬 실행
+### Conversational AI
+- **Context Management**: Session-based conversation history
+- **Follow-up Processing**: Natural dialogue flow with memory retention
+- **Response Generation**: GPT-4o-mini with context-aware prompting
+
+## 📊 Dataset & Performance
+
+- **Professor Profiles**: 31 SNU Medical School faculty members
+- **Research Papers**: 96 publications indexed
+- **Data Completeness**: 95.8%
+- **Embedding Dimensions**: 1536 (OpenAI text-embedding-3-small)
+- **Response Time**: < 3 seconds average
+
+## 🚀 Key Features
+
+- **🧠 Intelligent Query Processing**: Automatic classification and routing of user queries
+- **🔍 Hybrid Search Strategy**: RAG + Web search for comprehensive coverage
+- **💬 Natural Conversation**: Context-aware dialogue with memory
+- **⚡ Fast Response**: Optimized vector search with quality thresholds
+- **🎯 Personalized Recommendations**: Matching based on research interests and preferences
+
+## 🛠️ Technology Stack
+
+| Component | Technology |
+|-----------|------------|
+| **Frontend** | Streamlit |
+| **Backend Framework** | LangChain |
+| **LLM** | GPT-4o-mini (Azure OpenAI) |
+| **Embeddings** | text-embedding-3-small |
+| **Vector Database** | Chroma |
+| **Web Search** | Tavily API |
+| **Data Processing** | Python, JSON |
+
+## 📁 Project Structure
+
+```
+team07-lab-recommender/
+├── streamlit_app.py              # Main web application
+├── rag_lab_recommender.py        # Core RAG engine with conversation management
+├── generate_embeddings.py        # Vector embedding generation
+├── professors_final_complete.json # Professor dataset (31 profiles)
+├── requirements.txt              # Python dependencies
+├── deployment_guide.md           # Deployment instructions
+└── .streamlit/                   # Streamlit configuration
+```
+
+### Key Files
+
+- **`streamlit_app.py`**: Web interface with session management and chat UI
+- **`rag_lab_recommender.py`**: Core RAG implementation with `ConversationHistory` class
+- **`generate_embeddings.py`**: Embedding generation and vector database setup
+- **`professors_final_complete.json`**: Curated dataset of professor profiles and research areas
+
+## 🏃‍♂️ Quick Start
+
+### Prerequisites
+
+- Python 3.8+
+- Azure OpenAI API access
+- Tavily API key (for web search)
+
+### Installation
 
 ```bash
-# 1. 레포지토리 클론
-git clone https://github.com/YOUR_USERNAME/team07-lab-recommender.git
+# 1. Clone repository
+git clone https://github.com/elecsonJ/team07-lab-recommender.git
 cd team07-lab-recommender
 
-# 2. 가상환경 생성 및 활성화
-python -m venv team07_env
-source team07_env/bin/activate  # Windows: team07_env\Scripts\activate
+# 2. Create virtual environment
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
 
-# 3. 패키지 설치
+# 3. Install dependencies
 pip install -r requirements.txt
 
-# 4. 환경변수 설정 (.env 파일 생성)
-AZURE_OPENAI_ENDPOINT=your_endpoint
-OPENAI_API_KEY=your_api_key
-OPENAI_API_VERSION=your_version
+# 4. Configure environment variables
+cp .env.example .env
+# Edit .env with your API keys:
+# AZURE_OPENAI_ENDPOINT=your_endpoint
+# OPENAI_API_KEY=your_api_key
+# OPENAI_API_VERSION=your_version
+# TAVILY_API_KEY=your_tavily_key
 
-# 5. 웹 앱 실행
+# 5. Generate embeddings (first time only)
+python generate_embeddings.py
+
+# 6. Run application
 streamlit run streamlit_app.py
 ```
 
-## 📊 데이터 현황
+## 🧪 Usage Examples
 
-- **교수 수**: 31명
-- **논문 수**: 96편  
-- **데이터 완성도**: 95.8%
-- **마지막 업데이트**: 2025-07-24
+### Basic Research Area Query
+```
+User: "I'm interested in AI and machine learning research"
+→ RAG Search → Professor matching → Detailed recommendations
+```
 
-## 🤝 팀원
+### Follow-up Questions
+```
+User: "Tell me more about Professor Kim's recent work"
+→ Conversational context → Targeted information retrieval
+```
 
-Team 07 - 대학원 연구실 추천 시스템 개발팀
+### General Information Query
+```
+User: "What's the application process for grad school?"
+→ Query classification → Web search fallback → Comprehensive answer
+```
+
+## 🎯 Learning Outcomes
+
+This project demonstrates:
+
+- **RAG Implementation**: End-to-end retrieval-augmented generation system
+- **Agentic AI Design**: Adaptive strategy selection based on context
+- **Vector Database Management**: Efficient similarity search and retrieval
+- **Conversational AI**: Context-aware dialogue systems
+- **Hybrid Search Architecture**: Combining multiple information sources
+- **Production Deployment**: Web application with session management
+
+## 🔧 Development Journey
+
+Built during a hackathon as an exploration of:
+- Modern RAG architectures and implementation patterns
+- Agentic AI systems with decision-making capabilities
+- Integration of multiple AI services (OpenAI, Tavily)
+- Real-world data processing and embedding generation
+- User experience design for AI-powered applications
+
+## 📝 Technical Notes
+
+- **Quality Control**: Implemented cosine similarity thresholds to ensure relevant results
+- **Fallback Strategy**: Web search integration when RAG confidence is low
+- **Context Management**: Session-based conversation memory for natural dialogue
+- **Data Pipeline**: Structured professor profile processing and embedding generation
+- **API Integration**: Azure OpenAI and Tavily API with proper error handling
+
+## 🤝 Contributing
+
+This repository serves as a portfolio demonstration of RAG and Agentic AI implementation. The codebase showcases production-ready patterns for:
+- Vector database integration
+- Conversational AI systems
+- Hybrid search architectures
+- Modern web application deployment
+
+---
+
+**Team 07** - Graduate School Lab Recommender System Development Team
